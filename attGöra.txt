@@ -7,4 +7,4 @@ Fixa Navbar m Bootstrap.
 
 Fixa react router dom länkar till Navbar
 
-Lägga till {namn} på bilar i Navbar.
+Lägga till {namn} på bilar i Navbar med Redux.
