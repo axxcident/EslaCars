@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import "./index.css";
-import "./App.css";
 
 interface SectionProps {
   title?: string;
