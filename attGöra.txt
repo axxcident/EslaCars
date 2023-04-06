@@ -1,0 +1,10 @@
+Kolla dessa sidor. Dessa paket behövs bland annat:
+https://react-bootstrap.github.io/getting-started/introduction
+https://redux.js.org/usage/usage-with-typescript
+https://reactrouter.com/en/main
+
+Fixa Navbar m Bootstrap.
+
+Fixa react router dom länkar till Navbar
+
+Lägga till {namn} på bilar i Navbar.
