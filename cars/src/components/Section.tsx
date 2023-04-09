@@ -13,15 +13,30 @@ const Section = ({ title, description, bgImg, Lbtn, Rbtn }: SectionProps) => {
   return (
     <div>
       <Wrap bgImg={bgImg}>
-        <ItemText>
+        {description ? (
+          <ItemText>
+            <h1>{title || "Model 3"}</h1>
+            <p>{description}</p>
+          </ItemText>
+        ) : (
+          <ItemText>
+            <h1>{title}</h1>
+          </ItemText>
+        )}
+        {/* <ItemText>
           <h1>{title || "Model 3"}</h1>
           <p>{description}</p>
-        </ItemText>
-        <ButtonGroup>
-          <LeftButton>{Lbtn}</LeftButton>
-          <RigthButton>{Rbtn}</RigthButton>
-          {/* <RigthBTN>saker</RigthBTN> */}
-        </ButtonGroup>
+        </ItemText> */}
+        {Rbtn ? (
+          <ButtonGroup>
+            <LeftButton>{Lbtn}</LeftButton>
+            <RigthButton>{Rbtn}</RigthButton>
+          </ButtonGroup>
+        ) : (
+          <ButtonGroup>
+            <LeftButton>{Lbtn}</LeftButton>
+          </ButtonGroup>
+        )}
         <DownArrow src="/images/down-arrow.svg" />
       </Wrap>
     </div>
@@ -69,14 +84,8 @@ const LeftButton = styled.div`
 
 const RigthButton = styled(LeftButton)`
   background-color: rgba(244, 244, 244, 1);
-  align-items: center;
   color: rgba(22, 26, 32, 0.8);
-  text-align: center;
-  padding: 10px 80px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 800;
+  margin-left: 1.5vw;
 `;
 
 const DownArrow = styled.img`
@@ -86,5 +95,5 @@ const DownArrow = styled.img`
   margin-top: 20px;
   display: flex;
   margin: auto;
-  animation: animateDown infinite 1.5s;
+  animation: animateDown infinite 3s;
 `;

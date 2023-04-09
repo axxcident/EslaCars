@@ -19,9 +19,9 @@ code {
 
   }
   40%{
-      transform: translateY(5px);
+      transform: translateY(2px);
   }
   60%{
-      transform: translateY(3px);
+      transform: translateY(4px);
   }
 }
