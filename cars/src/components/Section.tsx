@@ -33,7 +33,7 @@ const Section = ({ title, description, bgImg, Lbtn, Rbtn }: SectionProps) => {
             <RigthButton>{Rbtn}</RigthButton>
           </ButtonGroup>
         ) : (
-          <ButtonGroup>
+          <ButtonGroup style={{ marginTop: "100px" }}>
             <LeftButton>{Lbtn}</LeftButton>
           </ButtonGroup>
         )}
@@ -51,14 +51,14 @@ const Wrap = styled.div<SectionProps>`
   background-position: center;
   background-size: cover;
   display: flex;
-  height: 100vh;
+  height: 110vh;
   flex-direction: column;
   justify-content: center;
 `;
 
 const ItemText = styled.div`
-  padding-top: 5vh;
-  margin-bottom: 70vh;
+  padding-top: 25vh;
+  margin-bottom: 50vh;
   text-align: center;
 `;
 
@@ -71,7 +71,7 @@ const LeftButton = styled.div`
   align-items: center;
   color: white;
   text-align: center;
-  padding: 10px 80px;
+  padding: 10px 6vw;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;

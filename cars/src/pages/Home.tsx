@@ -1,9 +1,10 @@
 import React from "react";
 import Section from "../components/Section";
+import styled from "styled-components";
 
 const Home = () => {
   return (
-    <>
+    <Container>
       <Section
         title={"Model Y"}
         description={"View Inventory"}
@@ -51,8 +52,12 @@ const Home = () => {
         bgImg={"dd739764-bcaa-4263-9488-8c73bc9fb046.jpeg"}
         Lbtn={"Shop Now"}
       />
-    </>
+    </Container>
   );
 };
 
 export default Home;
+
+const Container = styled.div`
+  margin-top: -10vh;
+`;

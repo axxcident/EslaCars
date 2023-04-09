@@ -25,3 +25,30 @@ code {
       transform: translateY(4px);
   }
 }
+
+/* Navbar */
+.logo {
+  height: 45px;
+}
+
+#root > div > nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent!important;
+}
+
+#Nav\.Link {
+  text-decoration: none;
+  color: rgba(22, 26, 32, 1);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 10px;
+}
+
+#Nav\.Link\ collasible-nav-dropdown {
+  text-decoration: none;
+  color: rgba(22, 26, 32, 1);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 2px;
+}
