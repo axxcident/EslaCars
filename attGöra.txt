@@ -1,10 +1,37 @@
 Kolla dessa sidor. Dessa paket behövs bland annat:
 https://react-bootstrap.github.io/getting-started/introduction
-https://redux.js.org/usage/usage-with-typescript
 https://reactrouter.com/en/main
-
+CHECK
 Fixa Navbar m Bootstrap.
-
 Fixa react router dom länkar till Navbar
 
+
+
+https://redux.js.org/usage/usage-with-typescript
 Lägga till {namn} på bilar i Navbar med Redux.
+
+
+Gamla länkar
+              {/* <NavDropdown title="Menu" id="Nav.Link collasible-nav-dropdown">
+                <NavDropdown.Item>
+                  <Link id="Nav.Link" to={"/about"}>
+                    About
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link id="Nav.Link" to={"/contact"}>
+                    Contact
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link id="Nav.Link" to={"/faq"}>
+                    FAQ
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item>
+                  <a id="Nav.Link" href="https://www.tesla.com" target="_blank">
+                    Real Tesla site
+                  </a>
+                </NavDropdown.Item>
+              </NavDropdown> */}

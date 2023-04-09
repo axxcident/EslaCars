@@ -45,10 +45,30 @@ code {
   margin: 10px;
 }
 
-#Nav\.Link\ collasible-nav-dropdown {
+#Nav\.Link\ collapsible-nav-dropdown {
   text-decoration: none;
   color: rgba(22, 26, 32, 1);
   font-size: 15px;
   font-weight: 500;
   margin: 2px;
 }
+
+/* .my-nav-dropdown {
+  display: flex;
+  flex-direction: column;
+} */
+
+.show {
+  display: flex!important;
+  flex-direction: column!important;
+}
+
+/* #responsive-navbar-nav\ collapsible-nav-dropdown > div:nth-child(2) > div > div {
+  display: flex;
+  flex-direction: column;
+} */
+
+/* #responsive-navbar-nav > div:nth-child(2) > div > div {
+  display: flex;
+  flex-direction: column;
+} */

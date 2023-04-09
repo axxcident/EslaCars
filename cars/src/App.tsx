@@ -1,6 +1,4 @@
-import React from "react";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import React, { useState } from "react";
 import "./App.css";
 import "./index.css";
 // Allmän Bootstrap
@@ -9,17 +7,33 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, Route, Routes } from "react-router-dom";
 import { NavDropdown } from "react-bootstrap";
+// React Router
+import { Link, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+
+// Redux
+import { useSelector } from "react-redux";
+import { selectCars } from "./features/navbar/carSlice";
+
+// miscellanious
 
 function App() {
+  const cars = useSelector(selectCars);
+  const [expanded, setExpanded] = useState(false);
+
+  const handleSelect = () => {
+    setExpanded(false);
+    console.log("klickas?");
+  };
+
   return (
     <div className="App">
       <Navbar
+        aria-expanded={expanded}
         collapseOnSelect
         expand="lg"
-        bg="dark"
-        variant="dark"
         sticky="top"
       >
         <Container>
@@ -30,47 +44,48 @@ function App() {
               src="/images/0x0-Tesla_Wordmark_20_Black.png"
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav collapsible-nav-dropdown" />
+          <Navbar.Collapse id="responsive-navbar-nav collapsible-nav-dropdown">
             <Nav className="me-auto">
-              <Link id="Nav.Link" to={"/"}>
-                Model Y
-              </Link>
-              <Link id="Nav.Link" to={"/"}>
-                Model X
-              </Link>
-              <Link id="Nav.Link" to={"/"}>
-                Model S
-              </Link>
+              {cars &&
+                cars.map((car: string, index: string) => (
+                  <Link key={index} id="Nav.Link" to={"/"}>
+                    {car}
+                  </Link>
+                ))}
             </Nav>
+
             <Nav>
-              <Link id="Nav.Link" to={"/"}>
-                Model Y
+              <Link id="Nav.Link" to={"/"} onClick={() => setExpanded(false)}>
+                Account
               </Link>
-              <Link id="Nav.Link" to={"/"}>
-                Model X
-              </Link>
-              <NavDropdown title="Menu" id="Nav.Link collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  <Link id="Nav.Link" to={"/about"}>
-                    About
-                  </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  <Link id="Nav.Link" to={"/about"}>
-                    About
-                  </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  <Link id="Nav.Link" to={"/about"}>
-                    About
-                  </Link>
-                </NavDropdown.Item>
+              <NavDropdown
+                className="my-nav-dropdown"
+                onToggle={() => setExpanded(!expanded)}
+                title="Menu"
+                id="Nav.Link collapsible-nav-dropdown"
+                onSelect={handleSelect}
+              >
+                <Link
+                  id="Nav.Link"
+                  to={"/about"}
+                  onClick={() => setExpanded(false)}
+                >
+                  About
+                </Link>
+                <Link id="Nav.Link" to={"/"} onClick={() => setExpanded(false)}>
+                  Contact
+                </Link>
+                <Link id="Nav.Link" to={"/"} onClick={() => setExpanded(false)}>
+                  FAQ
+                </Link>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  <a id="Nav.Link" href="https://www.tesla.com" target="_blank">
-                    Real Tesla site
-                  </a>
+                <NavDropdown.Item
+                  href="https://www.tesla.com"
+                  target="_blank"
+                  onClick={() => setExpanded(false)}
+                >
+                  Real Tesla site
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
